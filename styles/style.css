@@ -1,0 +1,175 @@
+
+@charset "UTF-8";
+
+@media (prefers-color-scheme: dark) {
+  body { background: #424242; color: white; }
+}
+@media (prefers-color-scheme: light) {
+  body { background: #ddd; color: black; }
+}
+
+* {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 100%;
+  line-height: 1.5;
+  font-weight: 500;
+  font-family: -apple-system, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#tasks{
+  margin: 2% 20% 10% 20%;
+  padding: 5rem 0;
+}
+
+#toggle-dark-mode{
+    position: fixed;
+    right: 5%;
+    top: 5%;
+    padding: 1%;
+    border-radius: 0.3rem;
+}
+
+.container {
+  max-width: 20rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.btn {
+  margin: 0;
+  padding: 0.1rem 0.4rem;
+
+  font: inherit;
+  font-size: 0.875rem;
+
+  background-color: transparent;
+  border-radius: 0.5rem;
+
+  appearance: none;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+}
+
+.btn--red {
+  color: #b7043d;
+  border: none;
+}
+
+.btn--red:hover {
+  color: white;
+  background-color: #b7043d;
+}
+
+.btn--red:active {
+  background-color: white;
+  color: #b7043d;
+}
+
+.btn--bg-blue {
+  color: white;
+  background-color: #9596CE;
+  border-color: inherit;
+  box-shadow: 0 0 0 1px #0954a4;
+}
+
+.btn--bg-blue:hover {
+  border-color: #CE5F91;
+  box-shadow: 0 0 0 2px #064281;
+}
+
+.btn--bg-blue:active {
+  background-color: #CE5F91;
+  box-shadow: 0 0 0 1px #064281;
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 2rem;
+  padding: 0;
+  gap: 1rem;
+  list-style: none;
+}
+
+.task {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1rem;
+
+  border-radius: 0.4rem;
+}
+
+.task--done {
+  opacity: 0.6;
+}
+
+.task__label {
+  display: block;
+}
+
+.task__checkbox {
+  display: none;
+}
+
+.task__checkbox-custom {
+  display: block;
+
+  width: 1rem;
+  height: 1rem;
+
+  background-color: white;
+  border: 1px solid white;
+  box-shadow: 0 0 0 1px black;
+  border-radius: 50%;
+}
+
+.task__checkbox:checked + .task__checkbox-custom {
+  background-color: black;
+}
+
+.task__text {
+  margin: 0 1rem;
+  flex-grow: 1;
+}
+
+.task__delete {
+  margin-left: auto;
+}
+
+.task--done .task__text {
+  text-decoration: line-through;
+}
+
+.create-task__textarea {
+  width: 100%;
+  height: 4rem;
+  padding: 0.5rem;
+  resize: none;
+
+  font: inherit;
+  font-size: 1rem;
+
+  background-color: white;
+  border: 1px solid white;
+  box-shadow: 0 0 0 1px black;
+  border-radius: 0.3rem;
+  margin: 0 0 1rem;
+}
+
+.create-task__submit {
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  font-size: 1rem;
+}
